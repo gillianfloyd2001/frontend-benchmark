@@ -10,6 +10,9 @@
     <title>GuestBook Benchmark</title>
 </head>
 <body>
+    <form action="{% url 'app:latest_entries' %}"></form>
+
+
     <form action="{% url 'app:create_entry' %}" method="POST">
         {% csrf_token %}
         <label for="clarification">Name:
