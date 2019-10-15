@@ -12,8 +12,12 @@
 <body>
     <form action="{% url 'app:create_entry' %}" method="POST">
         {% csrf_token %}
-        <label for="clarification">Name: </label>
-        <input type="text" name="fullname"/>
+        <label for="clarification">Name:
+            <input type="text" name="fullname"/> 
+        </label>
+        <label>Type your comment:
+            <input type="text" name="message">
+         </label>
         <button type="Submit">Submit</button>
     </form>
 </body>
