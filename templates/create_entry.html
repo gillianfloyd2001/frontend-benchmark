@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{% url 'create_entry' %}" method='POST'>
+    <form action="/entries/create" method='POST'>
         {% csrf_token %}
         <label>Message:
             <input type="text" title="message">
