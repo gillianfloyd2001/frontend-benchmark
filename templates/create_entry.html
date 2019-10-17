@@ -1,1 +1,18 @@
-{{create_entry}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'create_entry' %}" method='POST'>
+        {% csrf_token %}
+        <label>Message:
+            <input type="text" title="message">
+        </label>
+        <button id="create_button">Create</button>
+    </form>
+</body>
+</html>
