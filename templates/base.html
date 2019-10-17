@@ -10,18 +10,10 @@
     <title>GuestBook Benchmark</title>
 </head>
 <body>
-    <form action="{% url 'app:latest_entries' %}"></form>
-
-
-    <form action="{% url 'app:create_entry' %}" method="POST">
+    <form action="{% url 'create'%}" method="post">
         {% csrf_token %}
-        <label for="clarification">Name:
-            <input type="text" name="fullname"/> 
-        </label>
-        <label>Type your comment:
-            <input type="text" name="message">
-        </label>
-        <button type="Submit">Submit</button>
+        <input type="text" name="title">
+        <button>Create</button>
     </form>
 </body>
 </html>
