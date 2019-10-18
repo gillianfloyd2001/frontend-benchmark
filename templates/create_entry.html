@@ -10,7 +10,7 @@
     <form action="/entries/create" method='POST'>
         {% csrf_token %}
         <label>Message:
-            <input type="text" title="message">
+            <input type="text" name="content">
         </label>
         <button id="create_button">Create</button>
     </form>
