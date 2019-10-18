@@ -7,9 +7,29 @@
     <title>Document</title>
 </head>
 <body>
-     <a href="/entries/create">Write a Message.</a>
-    
-    <form action="/entries/" method="post"></form>
+    <header>
+        {% for entry in entries %}
+            <li> {{ entry.content }}
+                <form action="/entries/<int:id>/like" method="POST">
+                    {% csrf_token %}
+                    <button class="like">Like</button>
+                </form>
+            </li>
+        {% endfor %}
+        <a href="/entries/create">Write a Message.</a>
+    </header>
 
+    <main>
+        <ul>
+            {% for entry in entries %}
+                <li> {{ entry.content }}
+                    <form action="/entries/<int:id>/like" method="POST">
+                        {% csrf_token %}
+                        <button class="like">Like</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
 </body>
 </html>
