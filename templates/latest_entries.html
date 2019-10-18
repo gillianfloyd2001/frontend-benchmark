@@ -7,17 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
+    <header> 
         {% for entry in entries %}
             <label>Entries:
                 <li> {{ entry.content }}
-            </label>
-
-                <form action="/entries/<int:id>/like" method="POST">
-                    {% csrf_token %}
-                    <button class="like">Like</button>
-                </form>
+                <button id="like"> 0 Like</button>
             </li>
+            </label>
         {% endfor %}
         <a href="/entries/create">Write a Message.</a>
     </header>
