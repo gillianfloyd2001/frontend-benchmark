@@ -10,6 +10,27 @@
     <title>GuestBook Benchmark</title>
 </head>
 <body>
+    <header>
+        <form action="/entries/create" method='POST'>
+            {% csrf_token %}
+            <label>Message:
+                <input type="text" title="message">
+            </label>
+            <button id="create_button">Create</button>
+        </form>
+    </header>
 
+    <main>
+        <ul>
+            {% for entry in entries %}
+                <li> {{ entry.title }}
+                <form action="{% url '/entries/<int:id>/like' entry.id %}" method="POST">
+                    {% csrf_token %}
+                    <button class="like">Like</button>
+                </form>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
 </body>
 </html>
